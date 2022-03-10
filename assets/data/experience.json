@@ -1,0 +1,55 @@
+[
+  {
+    "company_name": "Acazia Software Co., Ltd",
+    "company_logo": "acazia.png",
+    "start_time": "02/2017",
+    "contract": "Full-time",
+    "timelines": [
+      {
+        "title": "Flutter Technical Leader",
+        "description": "Leading team (5 developers), training intership for 2 years, participant in interview candidates"
+      },
+      {
+        "title": "Senior React Native Developer",
+        "description": "Analyze, code and review for outsourcing clients"
+      }
+    ]
+  },
+  {
+    "company_name": "101 Digital",
+    "company_logo": "digital.jpeg",
+    "contract": "Partner",
+    "start_time": "08/2020",
+    "timelines": [
+      {
+        "title": "Senior React Native Developer",
+        "description": "Analyze, code and review"
+      }
+    ]
+  },
+  {
+    "company_name": "B13 Technology",
+    "company_logo": "b13.jpg",
+    "contract": "Freelancer",
+    "start_time": "08/2020",
+    "timelines": [
+      {
+        "title": "Senior Flutter Developer",
+        "description": "Analyze, code and review"
+      }
+    ]
+  },
+  {
+    "company_name": "Positive Thinking Company",
+    "company_logo": "pyco.png",
+    "start_time": "03/2020",
+    "contract": "Partner",
+    "end_time": "08/2020",
+    "timelines": [
+      {
+        "title": "Middle Flutter Developer",
+        "description": "Analyze, code"
+      }
+    ]
+  }
+]

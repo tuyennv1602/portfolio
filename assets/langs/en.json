@@ -1,0 +1,19 @@
+{
+  "home": {
+    "welcome": "Hi,\nI'm Tuyen,\nMobile developer.",
+    "my_portfolio": "My Portfolio"
+  },
+  "portfolio": {
+    "theme": "Theme",
+    "summary": "Summary",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact",
+    "projects": "Projects",
+    "download_cv": "Download CV",
+    "technical_skills": "Technical Skills",
+    "soft_skills": "Soft Skills",
+    "language": "Languages"
+  }
+}

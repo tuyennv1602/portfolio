@@ -1,0 +1,92 @@
+[
+  {
+    "type": "techincal_skills",
+    "icon": "code.svg",
+    "items": [
+      {
+        "label": "Technologies",
+        "value": ["Flutter", "React Native", "Android"]
+      },
+      {
+        "label": "Programming languages",
+        "value": ["Dart", "JavaScript", "TypeScript", "Java", "Kotlin", "C"]
+      },
+      {
+        "label": "Architecture patterns",
+        "value": ["Clean Architecture", "BLoC", "MVC", "MVVM"]
+      },
+      {
+        "label": "State management",
+        "value": ["Bloc", "Provider", "Redux", "Context"]
+      },
+      {
+        "label": "Databases",
+        "value": ["MySQL", "SQLite", "NoSQL with Firebase"]
+      },
+      {
+        "label": "IDEs",
+        "value": ["Visual Studio Code", "Android Studio", "Xcode"]
+      },
+      {
+        "label": "VCS using Git",
+        "value": ["GitHub", "GitLab", "BitBucket"]
+      },
+      {
+        "label": "Working tools/environments",
+        "value": ["Confluence", "Jira", "Redmine", "Notion", "Slack", "Skype", "Whatsapp"]
+      }
+    ]
+  },
+  {
+    "type": "soft_skills",
+    "icon": "like.svg",
+    "items": [
+      {
+        "label": "Logical and Critical thinking",
+        "point": 8.0
+      },
+      {
+        "label": "Teamwork as well as Independent-work",
+        "point": 9.0
+      },
+      {
+        "label": "Self-management",
+        "point": 8.0
+      },
+      {
+        "label": "Leadership",
+        "point": 6.0
+      },
+      {
+        "label": "Quick adaptability to new Environments/Projects",
+        "point": 9.5
+      },
+      {
+        "label": "Learning and adaptability with new Technology",
+        "point": 8.0
+      },
+      {
+        "label": "Training and transferring skills",
+        "point": 7.0
+      },
+      {
+        "label": "Design and UI/UX",
+        "point": 8.0
+      }
+    ]
+  },
+  {
+    "type": "language",
+    "icon": "language.svg",
+    "items": [
+      {
+        "label": "English",
+        "value": ["Industry-standard daily basic communication"]
+      },
+      {
+        "label": "Vietnamese",
+        "value": ["Native proficiency"]
+      }
+    ]
+  }
+]
