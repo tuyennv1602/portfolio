@@ -5,7 +5,7 @@ final darkTheme = ThemeData(primaryColor: Colors.white, backgroundColor: Colors.
 enum ThemeType { dark, light }
 
 class AppTheme {
-  static ThemeType defaultTheme = ThemeType.light;
+  static ThemeType defaultTheme = ThemeType.dark;
   final ThemeType type;
   final bool isDark;
   final Color backgroundColor;
@@ -40,7 +40,7 @@ class AppTheme {
           textColor: Colors.white,
           buttonColor: Colors.green,
           buttonTextColor: Colors.green,
-          dividerColor: Colors.white,
+          dividerColor: Colors.green,
           secondaryColor: const Color(0xffE0E0E0),
         );
       case ThemeType.light:
@@ -48,11 +48,11 @@ class AppTheme {
           isDark: false,
           type: t,
           backgroundColor: Colors.white,
-          primaryColor: Colors.green,
+          primaryColor: const Color.fromARGB(255, 5, 128, 9),
           textColor: Colors.black87,
-          buttonColor: Colors.green,
+          buttonColor: const Color.fromARGB(255, 5, 128, 9),
           buttonTextColor: Colors.green,
-          dividerColor: const Color(0xffe0e0e0),
+          dividerColor: const Color.fromARGB(255, 185, 185, 185),
           secondaryColor: Colors.grey,
         );
       default:

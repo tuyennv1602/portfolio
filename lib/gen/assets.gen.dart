@@ -12,6 +12,9 @@ import 'package:flutter/services.dart';
 class $AssetsDataGen {
   const $AssetsDataGen();
 
+  /// File path: assets/data/contact.json
+  String get contact => 'assets/data/contact.json';
+
   /// File path: assets/data/education.json
   String get education => 'assets/data/education.json';
 
@@ -101,6 +104,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/email.png
   AssetGenImage get email => const AssetGenImage('assets/images/email.png');
 
+  /// File path: assets/images/employee_of_year.jpg
+  AssetGenImage get employeeOfYear => const AssetGenImage('assets/images/employee_of_year.jpg');
+
   /// File path: assets/images/flutter_logo.png
   AssetGenImage get flutterLogo => const AssetGenImage('assets/images/flutter_logo.png');
 
@@ -115,6 +121,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/linkedin.png
   AssetGenImage get linkedin => const AssetGenImage('assets/images/linkedin.png');
+
+  /// File path: assets/images/location.png
+  AssetGenImage get location => const AssetGenImage('assets/images/location.png');
 
   /// File path: assets/images/phone.png
   AssetGenImage get phone => const AssetGenImage('assets/images/phone.png');

@@ -1,0 +1,31 @@
+[
+  {
+    "icon": "location.png",
+    "name": "Ha Noi, Viet Nam"
+  },
+  {
+    "icon": "phone.png",
+    "name": "Call",
+    "link": "tel://0374841404"
+  },
+  {
+    "icon": "email.png",
+    "name": "Email",
+    "link": "mailto:tuyennguyen160296@gmail.com"
+  },
+  {
+    "icon": "skype.png",
+    "name": "Skype",
+    "link": "https://join.skype.com/invite/DFtHbXDV8WhY"
+  },
+  {
+    "icon": "linkedin.png",
+    "name": "Linkedin",
+    "link": "https://linkedin.com/in/tuyen-nguyen-238199179"
+  },
+  {
+    "icon": "github.png",
+    "name": "Github page",
+    "link": "https://github.com/tuyennv1602"
+  }
+]

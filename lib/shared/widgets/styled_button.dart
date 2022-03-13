@@ -20,14 +20,14 @@ class StyledButton extends StatelessWidget {
     AppTheme theme = context.watch<AppModel>().theme;
     return Container(
       margin: margin,
-      padding: EdgeInsets.symmetric(horizontal: 15.w),
-      height: 50.h,
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      height: 50,
       decoration: BoxDecoration(
         border: Border.all(
           width: 1.5,
           color: theme.buttonColor,
         ),
-        borderRadius: BorderRadius.circular(50.h / 2),
+        borderRadius: BorderRadius.circular(50 / 2),
       ),
       child: Center(
         child: child,

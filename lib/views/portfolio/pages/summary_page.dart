@@ -24,41 +24,57 @@ class _SummaryPageState extends State<SummaryPage> {
     AppTheme theme = context.watch<AppModel>().theme;
     SummaryEnitity? summary = context.watch<PortfolioModel>().summary;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w),
+      padding: EdgeInsets.symmetric(horizontal: context.getSize(small: 20, large: 30)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 50.h),
+          SizedBox(height: context.getSize(small: 20, large: 50)),
           Text(
             'Tuyen Nguyen Van',
-            style: TextStyles.superBig700.copyWith(color: theme.textColor, fontSize: 40.sp),
+            style: TextStyles.superBig700.copyWith(
+              color: theme.textColor,
+              fontSize: context.getSize(small: 32, large: 40),
+            ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 5.h, bottom: 30.h),
+            padding: const EdgeInsets.only(top: 5, bottom: 30),
             child: Text(
               summary?.title ?? '',
-              style: TextStyles.extraBig500.copyWith(color: theme.textColor),
+              style: TextStyles.extraBig500.copyWith(
+                color: theme.textColor,
+                fontSize: context.getSize(small: 24, large: 32),
+              ),
             ),
           ),
           Expanded(
-            child: Text(
-              summary?.description ?? '',
-              style: TextStyles.medium400.copyWith(color: theme.textColor),
+            child: SingleChildScrollView(
+              physics: const ClampingScrollPhysics(parent: BouncingScrollPhysics()),
+              child: Text(
+                summary?.description ?? '',
+                style: TextStyles.medium400.copyWith(
+                  color: theme.textColor,
+                  fontSize: context.getSize(small: 16, large: 18),
+                ),
+              ),
             ),
           ),
           Align(
             alignment: Alignment.center,
-            child: Assets.images.appDevelopment.image(height: 150.h),
+            child: Assets.images.appDevelopment.image(
+              height: context.getSize(small: 120, large: 150),
+            ),
           ),
           Container(
-            height: 60.h,
-            margin: EdgeInsets.only(bottom: 30.h),
+            height: 60,
+            margin: const EdgeInsets.only(bottom: 30),
             alignment: Alignment.center,
             child: ListView.separated(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, index) => _tools[index].image(width: 60.w),
-              separatorBuilder: (_, __) => SizedBox(width: 30.w),
+              itemBuilder: (_, index) => _tools[index].image(
+                width: context.getSize(small: 50, large: 60),
+              ),
+              separatorBuilder: (_, __) => const SizedBox(width: 30),
               itemCount: _tools.length,
             ),
           )

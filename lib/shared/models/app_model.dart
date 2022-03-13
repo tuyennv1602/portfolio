@@ -4,7 +4,7 @@ import 'package:my_portfolio/shared/utils/utils.dart';
 import '../../core_packages.dart';
 
 class AppModel extends EasyNotifier {
-  static AppTheme get _defaultTheme => AppTheme.fromType(ThemeType.light);
+  static AppTheme get _defaultTheme => AppTheme.fromType(ThemeType.dark);
 
   /// Settings
   // Current Theme

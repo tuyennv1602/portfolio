@@ -3,9 +3,9 @@
     "name": "Buckt",
     "client": "Buckt (Outsourcing under B13 Technology)",
     "label": "Business",
-    "description": "This app help user book tickets or order activity easily. Through the Buckt app, subscribers can book in for their Buckt Go activities, order their Buckt Home activities, find out more about what they're getting each month and get access to exclusive content.",
+    "description": "This app helps users book tickets or order activities easily. Through the Buckt app, subscribers can book in for their Buckt Go activities, order their Buckt Home activities, find out more about what they're getting each month and get access to exclusive content.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features"
     ],
     "role": "Senior Flutter Developer",
@@ -20,7 +20,7 @@
     "label": "Financial",
     "description": "Invoice Manage which allows users total control of their entire invoice inventory. Users can view lists of due, overdue and paid invoices as well as adding customers and creating invoices to assign to them. Users can finalize invoices with payment type and share a digital copy of any invoices.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features",
       "Peer review",
       "Maintain and modernize"
@@ -35,9 +35,9 @@
     "name": "AX Accident Aftercare",
     "client": "AX UK (Outsourcing under B13 Technology)",
     "label": "Auto & Vehicles",
-    "description": "This app guides you step by step through the stages of your vehicle repair and keep you informed on the status of your repairs. At your fingertips, you will be able to monitor your repairs, liaise with your claim handler and provide information.",
+    "description": "This app guides you step by step through the stages of your vehicle repair and keeps you informed on the status of your repairs. At your fingertips, you will be able to monitor your repairs, liaise with your claim handler and provide information.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features",
       "Maintain and modernize"
     ],
@@ -51,11 +51,11 @@
     "name": "Test Preppr",
     "client": "Acazia Software Co., Ltd",
     "label": "Education",
-    "description": "Aimed Quality Control communities, this application allows users to review their knowledge and take mock tests based on the latest ISTQB standardizations. Thanks to the apps, users can comfortably prepare for the various ISTQB qualifications everywhere: from work break room to bus stations.",
+    "description": "Aimed at Quality Control communities, this application allows users to review their knowledge and take mock tests based on the latest ISTQB standardizations. Thanks to the apps, users can comfortably prepare for the various ISTQB qualifications everywhere: from work break room to bus stations.",
     "responsibility": [
       "Technical leader",
       "Work with product owner to get requirements",
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features",
       "Maintain and modernize"
     ],
@@ -69,14 +69,14 @@
     "name": "Rotherham Flu Program",
     "client": "NHS Digital (Outsourcing under B13 Technology)",
     "label": "Healthcare",
-    "description": "The application for doctor to search patients and record their flu vaccine.",
+    "description": "The application for doctors to search patients and record their flu vaccine.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features"
     ],
     "size": "8 members",
     "role": "Middle Flutter Developer",
-    "duration": "07/2020 - 09/2022",
+    "duration": "07/2020 - 09/2020",
     "technology": "Flutter, Dart, Restful API, Flutter Bloc, MVC",
     "platform": "Flutter"
   },
@@ -86,14 +86,14 @@
     "label": "Financial",
     "description": "Dakko Wellbeing is the marketplace that enables access to Health & Financial Wellness services for employees and their families. Employees can access their payslips, connect to bank accounts and view their own transaction history on each connected bank account. Employees will be notified of new payslips, coming payslips and can share their payslips as well downloading a printable pdf of their payslips.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features",
       "Peer review",
       "Maintain and modernize"
     ],
     "role": "Senior React Native Developer",
     "size": "8 members",
-    "duration": "08/2020 - 01/2022",
+    "duration": "08/2020 - 10/2021",
     "technology": "React Native, TypeScript, Restful API, Redux, FCM, Crashlytics, Analytic, Remote Config",
     "platform": "React Native"
   },
@@ -104,7 +104,7 @@
     "label": "Financial",
     "description": "The Jago application helps you manage your finances more easily, innovatively, and collaboratively. Jago is also available according to your preferences, with interest or sharia.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features"
     ],
     "role": "Middle Flutter Developer",
@@ -119,7 +119,7 @@
     "label": "Food and drink",
     "description": "This application is a foodstuff delivery platform that provides prepared fresh ingredients. We based our meal suggestions via image selection to calculate the most suitable amount of foodstuffs for your meal. You can place orders and receive packages during a preset time between 4 to 7PM at any point of delivery most convenient to you.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features",
       "Maintain and modernize"
     ],
@@ -130,12 +130,12 @@
     "platform": "React Native"
   },
   {
-    "name": "Batdongsan.com.vn",
+    "name": "batdongsan.com.vn",
     "client": "PROPERTYGURU VIETNAM JSC (Outsourcing under Acazia Software)",
     "label": "Business",
-    "description": "batdongsan app allows users in Vietnam to quickly, freely and accurate look up any informations regarding real estates across the country.",
+    "description": "batdongsan app allows users in Vietnam to quickly, freely and accurately look up any information regarding real estates across the country.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features"
     ],
     "role": "Junior React Native Developer",
@@ -148,15 +148,15 @@
     "name": "GODI",
     "client": "Acazia Software Co., Ltd",
     "label": "Entertainment",
-    "description": "GODI is an content aggregation app with Vietnamese user base front and center. Through a varied backlog of useful and interesting content as well as flexible, user friendly UIs, GODI provides its users with endless hours of entertainment.",
+    "description": "GODI is a content aggregation app with a Vietnamese user base front and center. Through a varied backlog of useful and interesting content as well as flexible, user-friendly UIs, GODI provides its users with endless hours of entertainment.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Mockup UI structures",
       "Implement app features",
       "Distribute to AppStore and PlayStore",
       "Maintain and modernize"
     ],
-    "role": "Fresher Flutter Developer",
+    "role": "Junior Flutter Developer",
     "size": "2 members",
     "duration": "03/2019 - 06/2019",
     "technology": "Flutter, Dart, SQLite, Restful API, RSS, Youtube API, Provider, MVVM, RxDart",
@@ -168,13 +168,13 @@
     "label": "Education",
     "description": "This mobile application allows Vietnamese users to quickly gauge their traffic law knowledge and efficiently review their abilities prior to an automobile test. The application includes more than 500 questions, providing the users with continually up-to-date information regarding Vietnamese traffic laws and customs.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Mockup UI structures",
       "Implement app features",
       "Distribute to AppStore and PlayStore",
       "Maintain and modernize"
     ],
-    "role": "Fresher Flutter Developer",
+    "role": "Junior Flutter Developer",
     "size": "2 members",
     "duration": "01/2019 - 03/2019",
     "technology": "Flutter, Dart, SQLite, Provider, MVVM, RxDart, Google AdMob",
@@ -186,7 +186,7 @@
     "label": "E-commerce",
     "description": "This mobile application forms an integral part of Drop App business suite by providing Drop App’s vendor assigned driver with an user friend, easy to use platform. This platform allows drivers to receive and update their delivery status concurrently and easily.",
     "responsibility": [
-      "Analize requirements and formulate technical solutions",
+      "Analyze requirements and formulate technical solutions",
       "Implement app features",
       "Peer review",
       "Maintain and modernize"

@@ -140,4 +140,17 @@ class PortfolioModel extends EasyNotifier {
       log('Error get projects: $e');
     }
   }
+
+  // Contacts
+  List<ContactEntity>? _contacts;
+  List<ContactEntity>? get contacts => _contacts;
+
+  Future<void> getContacts() async {
+    try {
+      final _resp = await _localRepository.getContacts();
+      notify(() => _contacts = _resp);
+    } catch (e) {
+      log('Error get contacts: $e');
+    }
+  }
 }

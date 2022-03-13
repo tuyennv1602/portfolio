@@ -16,7 +16,7 @@
         "value": ["Clean Architecture", "BLoC", "MVC", "MVVM"]
       },
       {
-        "label": "State management",
+        "label": "State managements",
         "value": ["Bloc", "Provider", "Redux", "Context"]
       },
       {

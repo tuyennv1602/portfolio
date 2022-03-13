@@ -10,10 +10,10 @@ EducationModel _$EducationModelFromJson(Map<String, dynamic> json) =>
     EducationModel(
       school: json['school'] as String,
       logo: json['logo'] as String,
-      institute: json['institute'] as String,
+      institute: json['institute'] as String?,
       department: json['department'] as String,
       time: json['time'] as String,
-      degree: json['degree'] as String,
+      degree: json['degree'] as String?,
     );
 
 Map<String, dynamic> _$EducationModelToJson(EducationModel instance) =>

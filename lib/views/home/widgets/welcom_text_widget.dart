@@ -4,7 +4,9 @@ import '../../../core_packages.dart';
 import '../home_screens.dart';
 
 class WelcomeText extends StatefulWidget {
-  const WelcomeText({Key? key}) : super(key: key);
+  const WelcomeText({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<WelcomeText> createState() => _WelcomeTextState();
@@ -41,7 +43,9 @@ class _WelcomeTextState extends State<WelcomeText> with SingleTickerProviderStat
       position: _offsetAnimation,
       child: Text(
         context.t('home.welcome'),
-        style: TextStyles.extraBig600.copyWith(color: Colors.white).copyWith(fontSize: 34.sp),
+        style: TextStyles.extraBig600
+            .copyWith(color: Colors.white)
+            .copyWith(fontSize: context.getSize(small: 28, large: 34)),
       ),
     );
   }

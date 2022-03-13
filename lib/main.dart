@@ -10,8 +10,8 @@ import 'localizations/app_localizations.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight,
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
   ]);
   await setupDi();
   runApp(const _AppBootStrapper());
@@ -41,16 +41,13 @@ class _AppBootStrapperState extends State<_AppBootStrapper> {
         ListenableProvider<AppNavigator>.value(value: _router),
         ChangeNotifierProvider<AppModel>.value(value: GetIt.I()),
       ],
-      child: Builder(builder: (context) {
-        AppTheme theme = context.select((AppModel m) => m.theme);
-        ThemeData materialTheme = theme.toThemeData();
-        SystemChrome.setSystemUIOverlayStyle(
-            theme.isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark);
-        return ScreenUtilInit(
-          designSize: const Size(1440, 761),
-          minTextAdapt: true,
-          splitScreenMode: true,
-          builder: () => MaterialApp.router(
+      child: Builder(
+        builder: (context) {
+          AppTheme theme = context.select((AppModel m) => m.theme);
+          ThemeData materialTheme = theme.toThemeData();
+          SystemChrome.setSystemUIOverlayStyle(
+              theme.isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark);
+          return MaterialApp.router(
             title: 'Tuyen Nguyen Porfolio',
             routeInformationParser: _routeParser,
             routerDelegate: _router,
@@ -68,9 +65,9 @@ class _AppBootStrapperState extends State<_AppBootStrapper> {
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
             ],
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }

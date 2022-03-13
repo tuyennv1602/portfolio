@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
-import '../../../core_packages.dart';
 import '../home_screens.dart';
+import 'package:my_portfolio/shared/shared.dart';
 
 class AvatarWidget extends StatefulWidget {
   const AvatarWidget({Key? key}) : super(key: key);
@@ -48,12 +48,14 @@ class _AvatarWidgetState extends State<AvatarWidget> with SingleTickerProviderSt
             shape: BoxShape.circle,
           ),
           child: Container(
-            width: 280.w,
+            width: context.getSize(small: 220, large: 300),
             decoration: BoxDecoration(
               color: Colors.grey[300],
               shape: BoxShape.circle,
             ),
-            child: ClipOval(child: Assets.images.avatar.image()),
+            child: ClipOval(
+              child: Assets.images.avatar.image(),
+            ),
           ),
         ),
       ),

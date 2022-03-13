@@ -7,6 +7,7 @@ const _skillsData = 'assets/data/skills.json';
 const _experienceData = 'assets/data/experience.json';
 const _educationData = 'assets/data/education.json';
 const _projectsData = 'assets/data/projects.json';
+const _contactData = 'assets/data/contact.json';
 
 class LocalDataSource {
   Future<SummaryModel> getSummary() async {
@@ -32,5 +33,10 @@ class LocalDataSource {
   Future<List<ProjectModel>> getProjects() async {
     final resp = await rootBundle.loadString(_projectsData);
     return (jsonDecode(resp) as List).map((data) => ProjectModel.fromJson(data)).toList();
+  }
+
+  Future<List<ContactModel>> getContacts() async {
+    final resp = await rootBundle.loadString(_contactData);
+    return (jsonDecode(resp) as List).map((data) => ContactModel.fromJson(data)).toList();
   }
 }

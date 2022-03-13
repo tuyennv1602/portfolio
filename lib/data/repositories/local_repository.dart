@@ -10,6 +10,8 @@ abstract class LocalRepository {
   Future<List<EducationEntity>> getEducations();
 
   Future<List<ProjectEntity>> getProjects();
+
+  Future<List<ContactEntity>> getContacts();
 }
 
 class LocalRepositoryImpl implements LocalRepository {
@@ -44,6 +46,12 @@ class LocalRepositoryImpl implements LocalRepository {
   @override
   Future<List<ProjectEntity>> getProjects() async {
     final _model = await _localDataSource.getProjects();
+    return _model.map((m) => m.toEntity).toList();
+  }
+
+  @override
+  Future<List<ContactEntity>> getContacts() async {
+    final _model = await _localDataSource.getContacts();
     return _model.map((m) => m.toEntity).toList();
   }
 }

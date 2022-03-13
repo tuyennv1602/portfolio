@@ -11,26 +11,29 @@ class ProjectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppTheme theme = context.watch<AppModel>().theme;
     List<ProjectEntity> projects = context.watch<PortfolioModel>().projects ?? [];
-    return Column(
-      children: [
-        Row(
-          children: [],
-        ),
-        Expanded(
-          child: ListView.separated(
-            itemBuilder: (_, index) {
-              return _ItemProject(project: projects[index]);
-            },
-            separatorBuilder: (_, __) => Divider(
-              height: 20.h,
-              indent: 30.w,
-              endIndent: 30.w,
+    return SafeArea(
+      top: false,
+      child: Column(
+        children: [
+          Expanded(
+            child: ListView.separated(
+              padding: EdgeInsets.zero,
+              itemBuilder: (_, index) {
+                return _ItemProject(project: projects[index]);
+              },
+              separatorBuilder: (_, __) => Divider(
+                height: context.getSize(small: 15, large: 20),
+                indent: context.getSize(small: 15, large: 30),
+                endIndent: context.getSize(small: 15, large: 30),
+                color: theme.dividerColor,
+              ),
+              itemCount: projects.length,
             ),
-            itemCount: projects.length,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -51,72 +54,95 @@ class _ItemProject extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(30.w, 15.h, 30.w, 5.h),
+          padding: EdgeInsets.fromLTRB(
+            context.getSize(small: 15, large: 30),
+            context.getSize(small: 15, large: 15),
+            context.getSize(small: 15, large: 30),
+            5,
+          ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                project.name,
-                style: TextStyles.extraBig600,
+              Expanded(
+                child: Text(
+                  project.name,
+                  style: TextStyles.extraBig600.copyWith(
+                    fontSize: context.getSize(
+                      small: 22,
+                      large: 32,
+                    ),
+                  ),
+                ),
               ),
               Text(
                 project.duration,
-                style: TextStyles.big400,
+                style: TextStyles.big400.copyWith(
+                  fontSize: context.getSize(small: 16, large: 24),
+                ),
               ),
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(30.w, 5.h, 30.w, 10.h),
+          padding: EdgeInsets.fromLTRB(
+            context.getSize(small: 15, large: 30),
+            context.getSize(small: 0, large: 5),
+            context.getSize(small: 15, large: 30),
+            10,
+          ),
           child: Text(
             project.description,
-            style: TextStyles.medium400,
+            style: TextStyles.medium400.copyWith(
+              fontSize: context.getSize(small: 16, large: 18),
+            ),
           ),
         ),
-        Container(
-          height: 30.h,
-          margin: EdgeInsets.only(left: 30.w, top: 10.h, bottom: 20.h),
-          padding: EdgeInsets.only(right: 20.w),
-          child: ListView.separated(
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (_, index) {
-              return Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.h),
-                  color: theme.primaryColor.withOpacity(0.2),
-                ),
-                child: Center(
-                  child: Text(
-                    _technologies[index],
-                    style: TextStyles.medium500,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.getSize(small: 15, large: 30)),
+          child: Wrap(
+            direction: Axis.horizontal,
+            spacing: context.getSize(small: 5, large: 15),
+            runSpacing: -5,
+            children: _technologies
+                .map(
+                  (tech) => Chip(
+                    backgroundColor: theme.primaryColor.withOpacity(0.2),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.getSize(small: 5, large: 15),
+                    ),
+                    label: Text(
+                      tech,
+                      style: TextStyles.medium500.copyWith(
+                        fontSize: context.getSize(small: 15, large: 18),
+                      ),
+                    ),
                   ),
-                ),
-              );
-            },
-            separatorBuilder: (_, __) => SizedBox(width: 10.w),
-            itemCount: _technologies.length,
+                )
+                .toList(),
           ),
         ),
+        SizedBox(height: context.getSize(small: 15, large: 20)),
         _MoreInformationItem(
-          icon: Assets.icons.client.svg(width: 30.w, color: theme.secondaryColor),
+          icon: Assets.icons.client
+              .svg(width: context.getSize(small: 20, large: 30), color: theme.secondaryColor),
           label: 'Client',
           value: project.client,
         ),
         _MoreInformationItem(
-          icon: Assets.icons.working.svg(width: 30.w, color: theme.secondaryColor),
+          icon: Assets.icons.working
+              .svg(width: context.getSize(small: 20, large: 30), color: theme.secondaryColor),
           label: 'Role',
           value: project.role,
         ),
         _MoreInformationItem(
-          icon: Assets.icons.like.svg(width: 30.w, color: theme.secondaryColor),
+          icon: Assets.icons.like
+              .svg(width: context.getSize(small: 20, large: 30), color: theme.secondaryColor),
           label: 'Responsibilities',
           value: project.responsibility.map((r) => '∙ $r').join('\n'),
         ),
         _MoreInformationItem(
-          icon: Assets.icons.group.svg(width: 30.w, color: theme.secondaryColor),
+          icon: Assets.icons.group
+              .svg(width: context.getSize(small: 20, large: 30), color: theme.secondaryColor),
           label: 'Team size',
           value: project.size,
         )
@@ -140,27 +166,33 @@ class _MoreInformationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme theme = context.watch<AppModel>().theme;
-
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w),
+      padding: EdgeInsets.symmetric(horizontal: context.getSize(small: 15, large: 30)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               icon,
-              SizedBox(width: 10.w),
+              const SizedBox(width: 10),
               Text(
                 label,
-                style: TextStyles.medium400.copyWith(color: theme.secondaryColor, fontSize: 20.sp),
+                style: TextStyles.medium400.copyWith(
+                  color: theme.secondaryColor,
+                  fontSize: context.getSize(small: 16, large: 20),
+                ),
               ),
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(left: 40.w, bottom: 15.h, top: 5.h),
+            padding: EdgeInsets.only(
+              left: context.getSize(small: 30, large: 40),
+              bottom: context.getSize(small: 10, large: 15),
+              top: 5,
+            ),
             child: Text(
               value,
-              style: TextStyles.medium500.copyWith(fontSize: 20.sp),
+              style: TextStyles.medium500.copyWith(fontSize: context.getSize(small: 16, large: 20)),
             ),
           ),
         ],

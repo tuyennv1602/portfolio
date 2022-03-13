@@ -5,3 +5,4 @@ export 'experience_model.dart';
 export 'timeline_model.dart';
 export 'education_model.dart';
 export 'project_model.dart';
+export 'contact_model.dart';

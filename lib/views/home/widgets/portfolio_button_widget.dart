@@ -28,15 +28,15 @@ class _PortfolioButtonState extends State<PortfolioButton> {
       duration: const Duration(milliseconds: 500),
       opacity: opacityLevel,
       child: Container(
-        margin: EdgeInsets.only(top: 40.h),
-        height: 50.h,
-        width: 180.w,
+        margin: const EdgeInsets.only(top: 40),
+        height: 50,
+        width: 180,
         decoration: BoxDecoration(
           border: Border.all(
             width: 1.5,
             color: Colors.white,
           ),
-          borderRadius: BorderRadius.circular(50.h / 2),
+          borderRadius: BorderRadius.circular(50 / 2),
         ),
         child: Center(
           child: Text(

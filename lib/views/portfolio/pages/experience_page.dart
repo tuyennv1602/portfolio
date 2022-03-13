@@ -9,18 +9,22 @@ class ExperiencePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppTheme theme = context.watch<AppModel>().theme;
     List<ExperienceEntity> experiences = context.watch<PortfolioModel>().experiences ?? [];
-    return ListView.separated(
-      padding: EdgeInsets.symmetric(vertical: 30.h),
-      itemBuilder: (BuildContext context, int index) {
-        return _ExperienceItem(experience: experiences[index]);
-      },
-      itemCount: experiences.length,
-      separatorBuilder: (_, index) => Divider(
-        height: 30.h,
-        thickness: 1,
-        indent: 30.w,
-        endIndent: 30.w,
+    return SafeArea(
+      top: false,
+      child: ListView.separated(
+        padding: EdgeInsets.symmetric(vertical: context.getSize(small: 10, large: 30)),
+        itemBuilder: (BuildContext context, int index) {
+          return _ExperienceItem(experience: experiences[index]);
+        },
+        itemCount: experiences.length,
+        separatorBuilder: (_, index) => Divider(
+          height: context.getSize(small: 15, large: 30),
+          indent: context.getSize(small: 15, large: 30),
+          endIndent: context.getSize(small: 15, large: 30),
+          color: theme.dividerColor,
+        ),
       ),
     );
   }
@@ -38,52 +42,59 @@ class _ExperienceItem extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = context.watch<AppModel>().theme;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: context.getSize(small: 15, large: 30),
+        vertical: 15,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
             experience.getCompanyLogo,
-            width: 150.w,
-            height: 150.w,
+            width: context.getSize(small: 50, large: 150),
+            height: context.getSize(small: 50, large: 150),
           ),
-          SizedBox(width: 30.w),
+          SizedBox(width: context.getSize(small: 15, large: 30)),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   experience.companyName,
-                  style: TextStyles.extraBig600,
+                  style: TextStyles.extraBig600.copyWith(
+                    fontSize: context.getSize(small: 20, large: 30),
+                  ),
                 ),
                 Text(
                   '${experience.contract} ∙ ${experience.startTime} - ${experience.endTime ?? 'Present'}',
-                  style:
-                      TextStyles.medium500.copyWith(color: theme.secondaryColor, fontSize: 20.sp),
+                  style: TextStyles.medium500.copyWith(
+                    color: theme.secondaryColor,
+                    fontSize: context.getSize(small: 15, large: 18),
+                  ),
                 ),
                 ...experience.timelines.map(
                   (t) => Padding(
-                    padding: EdgeInsets.only(top: 20.h),
+                    padding: EdgeInsets.only(top: context.getSize(small: 15, large: 20)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
                             Container(
-                              width: 18.w,
-                              height: 18.w,
-                              margin: EdgeInsets.only(right: 10.w),
+                              width: context.getSize(small: 12, large: 18),
+                              height: context.getSize(small: 12, large: 18),
+                              margin: const EdgeInsets.only(right: 10),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  width: 1.5,
+                                  width: context.getSize(small: 1, large: 1.5),
                                   color: Colors.grey,
                                 ),
                                 shape: BoxShape.circle,
                               ),
                               child: Center(
                                 child: Container(
-                                  width: 10.w,
-                                  height: 10.w,
+                                  width: context.getSize(small: 5, large: 10),
+                                  height: context.getSize(small: 5, large: 10),
                                   decoration: BoxDecoration(
                                     border: Border.all(
                                       width: 1.5,
@@ -94,17 +105,22 @@ class _ExperienceItem extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Text(
-                              t.title,
-                              style: TextStyles.big500.copyWith(fontSize: 26.sp),
+                            Expanded(
+                              child: Text(
+                                t.title,
+                                style: TextStyles.big500
+                                    .copyWith(fontSize: context.getSize(small: 18, large: 22)),
+                              ),
                             ),
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 28.w),
+                          padding: EdgeInsets.only(left: context.getSize(small: 25, large: 28)),
                           child: Text(
                             t.description,
-                            style: TextStyles.medium400.copyWith(color: theme.secondaryColor),
+                            style: TextStyles.medium400.copyWith(
+                                color: theme.secondaryColor,
+                                fontSize: context.getSize(small: 14, large: 16)),
                           ),
                         ),
                       ],

@@ -6,18 +6,18 @@ part 'education_model.g.dart';
 class EducationModel {
   final String school;
   final String logo;
-  final String institute;
+  final String? institute;
   final String department;
   final String time;
-  final String degree;
+  final String? degree;
 
   EducationModel({
     required this.school,
     required this.logo,
-    required this.institute,
+    this.institute,
     required this.department,
     required this.time,
-    required this.degree,
+    this.degree,
   });
 
   factory EducationModel.fromJson(Map<String, dynamic> data) => _$EducationModelFromJson(data);

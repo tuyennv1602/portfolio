@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:my_portfolio/shared/shared.dart';
 import 'package:my_portfolio/views/portfolio/model/portfolio_model.dart';
 import 'package:my_portfolio/views/portfolio/widgets/large_board_widget.dart';
+import 'package:my_portfolio/views/portfolio/widgets/small_board_widget.dart';
 import '../../core_packages.dart';
 
 Widget portfolioScreenBuilder(BuildContext context) => ChangeNotifierProvider<PortfolioModel>.value(
@@ -11,7 +12,8 @@ Widget portfolioScreenBuilder(BuildContext context) => ChangeNotifierProvider<Po
         ..getSkills()
         ..getExperiences()
         ..getProjects()
-        ..getEducations(),
+        ..getEducations()
+        ..getContacts(),
       child: const PortfolioScreen(),
     );
 
@@ -25,12 +27,10 @@ class PortfolioScreen extends StatefulWidget {
 class _PortfolioScreenState extends State<PortfolioScreen> {
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = context.watch<AppModel>().theme;
-    return Scaffold(
-      backgroundColor: theme.backgroundColor,
-      body: const ResponsiveWidget(
-        largeScreen: LargeBoard(),
-      ),
+    return const ResponsiveWidget(
+      largeScreen: LargeBoardWidget(),
+      smallScreen: SmallBoardWidget(),
+      mediumScreen: SmallBoardWidget(),
     );
   }
 }
