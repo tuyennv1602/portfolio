@@ -20,12 +20,14 @@ class LargeBoardWidget extends StatefulWidget {
 }
 
 class _LargeBoardState extends State<LargeBoardWidget> {
-  final PageController _pageController = PageController();
+  late final PageController _pageController;
   int _currentPageIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    _pageController =
+        PageController(initialPage: context.read<PortfolioModel>().currentPage.toPageIndex);
     context.read<PortfolioModel>().addListener(
       () {
         final _pageIndex = context.read<PortfolioModel>().currentPage.toPageIndex;
@@ -48,7 +50,7 @@ class _LargeBoardState extends State<LargeBoardWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            width: 280,
+            width: 300,
             decoration: BoxDecoration(
               color: theme.backgroundColor,
               boxShadow: [

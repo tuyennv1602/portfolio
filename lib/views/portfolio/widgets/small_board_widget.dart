@@ -21,12 +21,14 @@ class SmallBoardWidget extends StatefulWidget {
 }
 
 class _SmallBoardWidgetState extends State<SmallBoardWidget> {
-  final PageController _pageController = PageController();
+  late final PageController _pageController;
   int _currentPageIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    _pageController =
+        PageController(initialPage: context.read<PortfolioModel>().currentPage.toPageIndex);
     context.read<PortfolioModel>().addListener(
       () {
         final _pageIndex = context.read<PortfolioModel>().currentPage.toPageIndex;
@@ -97,7 +99,7 @@ class _SmallBoardWidgetState extends State<SmallBoardWidget> {
                   Expanded(
                     child: Text(
                       context.t(_portfolioModel.currentPage.toPageLabel),
-                      style: TextStyles.big600.copyWith(color: theme.primaryColor),
+                      style: TextStyles.big600.copyWith(color: theme.primaryColor, fontSize: 20),
                     ),
                   ),
                   Align(
