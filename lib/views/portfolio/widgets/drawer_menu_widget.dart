@@ -69,7 +69,7 @@ class DrawerMenuWidget extends StatelessWidget {
           StyledButton(
             onPressed: () async {
               launch(
-                  'https://docs.google.com/document/d/1mW2ENqpOLh6GvWCoqvNP0W8uV1HgXpL6u1hR09we8lk/edit?usp=sharing');
+                  'https://drive.google.com/file/d/15Fh8Qg7Jf-VFuwnem_A4UY0MvD2W5lzK/view?usp=sharing');
             },
             margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
             child: Text(
