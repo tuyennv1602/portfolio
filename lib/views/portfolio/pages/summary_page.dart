@@ -23,62 +23,62 @@ class _SummaryPageState extends State<SummaryPage> {
   Widget build(BuildContext context) {
     AppTheme theme = context.watch<AppModel>().theme;
     SummaryEnitity? summary = context.watch<PortfolioModel>().summary;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.getSize(small: 20, large: 30)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: context.getSize(small: 20, large: 50)),
-          Text(
-            'Tuyen Nguyen Van',
-            style: TextStyles.superBig700.copyWith(
-              color: theme.textColor,
-              fontSize: context.getSize(small: 32, large: 40),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, bottom: 30),
-            child: Text(
-              summary?.title ?? '',
-              style: TextStyles.extraBig500.copyWith(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: context.getSize(small: 20, large: 30)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: context.getSize(small: 20, large: 50)),
+            Text(
+              'Tuyen Nguyen Van',
+              style: TextStyles.superBig700.copyWith(
                 color: theme.textColor,
-                fontSize: context.getSize(small: 24, large: 32),
+                fontSize: context.getSize(small: 32, large: 40),
               ),
             ),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              physics: const ClampingScrollPhysics(parent: BouncingScrollPhysics()),
+            Padding(
+              padding: const EdgeInsets.only(top: 5, bottom: 30),
               child: Text(
-                summary?.description ?? '',
-                style: TextStyles.medium400.copyWith(
+                summary?.title ?? '',
+                style: TextStyles.extraBig500.copyWith(
                   color: theme.textColor,
-                  fontSize: context.getSize(small: 16, large: 18),
+                  fontSize: context.getSize(small: 24, large: 32),
                 ),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Assets.images.appDevelopment.image(
-              height: context.getSize(small: 120, large: 150),
-            ),
-          ),
-          Container(
-            height: 60,
-            margin: const EdgeInsets.only(bottom: 30),
-            alignment: Alignment.center,
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (_, index) => _tools[index].image(
-                width: context.getSize(small: 50, large: 60),
+            Text(
+              summary?.description ?? '',
+              style: TextStyles.medium400.copyWith(
+                color: theme.textColor,
+                fontSize: context.getSize(small: 16, large: 18),
               ),
-              separatorBuilder: (_, __) => const SizedBox(width: 30),
-              itemCount: _tools.length,
             ),
-          )
-        ],
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.only(top: context.getSize(small: 50, large: 100)),
+                child: Assets.images.appDevelopment.image(
+                  height: context.getSize(small: 120, large: 150),
+                ),
+              ),
+            ),
+            Container(
+              height: 60,
+              margin: const EdgeInsets.only(bottom: 30),
+              alignment: Alignment.center,
+              child: ListView.separated(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) => _tools[index].image(
+                  width: context.getSize(small: 50, large: 60),
+                ),
+                separatorBuilder: (_, __) => const SizedBox(width: 30),
+                itemCount: _tools.length,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

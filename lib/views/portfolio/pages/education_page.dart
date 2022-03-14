@@ -12,21 +12,18 @@ class EducationPage extends StatelessWidget {
     AppTheme theme = context.watch<AppModel>().theme;
 
     List<EducationEntity> educations = context.watch<PortfolioModel>().educations ?? [];
-    return SafeArea(
-      top: false,
-      child: ListView.separated(
-        padding: const EdgeInsets.symmetric(vertical: 0),
-        itemBuilder: (_, index) {
-          return _ItemEducation(education: educations[index]);
-        },
-        separatorBuilder: (_, __) => Divider(
-          height: 1,
-          indent: context.getSize(small: 15, large: 30),
-          endIndent: context.getSize(small: 15, large: 30),
-          color: theme.dividerColor,
-        ),
-        itemCount: educations.length,
+    return ListView.separated(
+      padding: const EdgeInsets.symmetric(vertical: 0),
+      itemBuilder: (_, index) {
+        return _ItemEducation(education: educations[index]);
+      },
+      separatorBuilder: (_, __) => Divider(
+        height: 1,
+        indent: context.getSize(small: 15, large: 30),
+        endIndent: context.getSize(small: 15, large: 30),
+        color: theme.dividerColor,
       ),
+      itemCount: educations.length,
     );
   }
 }

@@ -11,26 +11,23 @@ class SkillsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<SkillsEntity> skills = context.watch<PortfolioModel>().skills ?? [];
-    return SafeArea(
-      top: false,
-      child: ListView.builder(
-        shrinkWrap: true,
-        padding: EdgeInsets.symmetric(vertical: context.getSize(small: 10, large: 20)),
-        itemBuilder: (_, index) {
-          final _skills = skills[index];
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _SectionHeader(
-                icon: _skills.getIcon,
-                title: _skills.type,
-              ),
-              ..._skills.items.map((item) => _SkillItem(item: item))
-            ],
-          );
-        },
-        itemCount: skills.length,
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      padding: EdgeInsets.symmetric(vertical: context.getSize(small: 10, large: 20)),
+      itemBuilder: (_, index) {
+        final _skills = skills[index];
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _SectionHeader(
+              icon: _skills.getIcon,
+              title: _skills.type,
+            ),
+            ..._skills.items.map((item) => _SkillItem(item: item))
+          ],
+        );
+      },
+      itemCount: skills.length,
     );
   }
 }

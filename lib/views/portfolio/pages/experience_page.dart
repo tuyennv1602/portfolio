@@ -11,20 +11,17 @@ class ExperiencePage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = context.watch<AppModel>().theme;
     List<ExperienceEntity> experiences = context.watch<PortfolioModel>().experiences ?? [];
-    return SafeArea(
-      top: false,
-      child: ListView.separated(
-        padding: EdgeInsets.symmetric(vertical: context.getSize(small: 10, large: 30)),
-        itemBuilder: (BuildContext context, int index) {
-          return _ExperienceItem(experience: experiences[index]);
-        },
-        itemCount: experiences.length,
-        separatorBuilder: (_, index) => Divider(
-          height: context.getSize(small: 15, large: 30),
-          indent: context.getSize(small: 15, large: 30),
-          endIndent: context.getSize(small: 15, large: 30),
-          color: theme.dividerColor,
-        ),
+    return ListView.separated(
+      padding: EdgeInsets.symmetric(vertical: context.getSize(small: 10, large: 30)),
+      itemBuilder: (BuildContext context, int index) {
+        return _ExperienceItem(experience: experiences[index]);
+      },
+      itemCount: experiences.length,
+      separatorBuilder: (_, index) => Divider(
+        height: context.getSize(small: 15, large: 30),
+        indent: context.getSize(small: 15, large: 30),
+        endIndent: context.getSize(small: 15, large: 30),
+        color: theme.dividerColor,
       ),
     );
   }

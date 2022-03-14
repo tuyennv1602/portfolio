@@ -13,27 +13,24 @@ class ProjectPage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = context.watch<AppModel>().theme;
     List<ProjectEntity> projects = context.watch<PortfolioModel>().projects ?? [];
-    return SafeArea(
-      top: false,
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.separated(
-              padding: EdgeInsets.zero,
-              itemBuilder: (_, index) {
-                return _ItemProject(project: projects[index]);
-              },
-              separatorBuilder: (_, __) => Divider(
-                height: context.getSize(small: 15, large: 20),
-                indent: context.getSize(small: 15, large: 30),
-                endIndent: context.getSize(small: 15, large: 30),
-                color: theme.dividerColor,
-              ),
-              itemCount: projects.length,
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.separated(
+            padding: EdgeInsets.zero,
+            itemBuilder: (_, index) {
+              return _ItemProject(project: projects[index]);
+            },
+            separatorBuilder: (_, __) => Divider(
+              height: context.getSize(small: 15, large: 20),
+              indent: context.getSize(small: 15, large: 30),
+              endIndent: context.getSize(small: 15, large: 30),
+              color: theme.dividerColor,
             ),
+            itemCount: projects.length,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -102,7 +99,7 @@ class _ItemProject extends StatelessWidget {
           child: Wrap(
             direction: Axis.horizontal,
             spacing: context.getSize(small: 5, large: 15),
-            runSpacing: -5,
+            runSpacing: context.getSize(small: 5, large: 10),
             children: _technologies
                 .map(
                   (tech) => Chip(

@@ -68,67 +68,65 @@ class _LargeBoardState extends State<LargeBoardWidget> {
             child: const DrawerMenuWidget(),
           ),
           Expanded(
-            child: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          width: 1,
-                          color: theme.dividerColor,
-                        ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 1,
+                        color: theme.dividerColor,
                       ),
                     ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            context.t(_portfolioModel.currentPage.toPageLabel),
-                            style: TextStyles.superBig700.copyWith(color: theme.primaryColor),
-                          ),
-                        ),
-                        Transform.scale(
-                          scale: 0.85,
-                          child: CupertinoSwitch(
-                            trackColor: Colors.grey[300],
-                            activeColor: Colors.grey[300],
-                            thumbColor: theme.primaryColor,
-                            value: theme.isDark,
-                            onChanged: (value) {
-                              context.read<AppModel>().changeTheme(value);
-                            },
-                          ),
-                        ),
-                        theme.isDark
-                            ? Assets.icons.moon.svg(width: 20, color: Colors.white)
-                            : Assets.icons.sun.svg(width: 24, color: Colors.amber),
-                      ],
-                    ),
                   ),
-                  Expanded(
-                    child: PageView(
-                      pageSnapping: false,
-                      physics: const NeverScrollableScrollPhysics(),
-                      onPageChanged: (index) {
-                        _portfolioModel.currentPage = index.toPageType;
-                      },
-                      controller: _pageController,
-                      scrollDirection: Axis.vertical,
-                      children: const [
-                        SummaryPage(),
-                        ExperiencePage(),
-                        SkillsPage(),
-                        ProjectPage(),
-                        EducationPage(),
-                        ContactPage()
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          context.t(_portfolioModel.currentPage.toPageLabel),
+                          style: TextStyles.superBig700.copyWith(color: theme.primaryColor),
+                        ),
+                      ),
+                      Transform.scale(
+                        scale: 0.85,
+                        child: CupertinoSwitch(
+                          trackColor: Colors.grey[300],
+                          activeColor: Colors.grey[300],
+                          thumbColor: theme.primaryColor,
+                          value: theme.isDark,
+                          onChanged: (value) {
+                            context.read<AppModel>().changeTheme(value);
+                          },
+                        ),
+                      ),
+                      theme.isDark
+                          ? Assets.icons.moon.svg(width: 20, color: Colors.white)
+                          : Assets.icons.sun.svg(width: 24, color: Colors.amber),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Expanded(
+                  child: PageView(
+                    pageSnapping: false,
+                    physics: const NeverScrollableScrollPhysics(),
+                    onPageChanged: (index) {
+                      _portfolioModel.currentPage = index.toPageType;
+                    },
+                    controller: _pageController,
+                    scrollDirection: Axis.vertical,
+                    children: const [
+                      SummaryPage(),
+                      ExperiencePage(),
+                      SkillsPage(),
+                      ProjectPage(),
+                      EducationPage(),
+                      ContactPage()
+                    ],
+                  ),
+                ),
+              ],
             ),
           )
         ],
